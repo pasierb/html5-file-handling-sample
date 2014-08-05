@@ -1,0 +1,34 @@
+body {
+    font-family: Verdana;
+    padding: 10px;
+}
+
+form fieldset {
+    border: none;
+    text-align: center;
+}
+
+form fieldset label {
+    color: #555;
+}
+
+.drop-zone {
+    border: 3px dashed #ddd;
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+.drop-zone .drop-instructions {
+    color: #bbb;
+    text-align: center;
+    font-size: 25px;;
+}
+
+img.thumbnail {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 5px;
+    -webkit-box-shadow: 3px 3px 2px 1px #7D7D7D;
+    box-shadow: 3px 3px 2px 1px #7D7D7D;
+    cursor: pointer;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <title>HTML5 File handling sample</title>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" media="all" href="assets/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form>
+            <fieldset>
+                <label for="uploaded-files">Upload images:</label>
+                <input id="uploaded-files" type="file" multiple>
+            </fieldset>
+        </form>
+        <div id="images" class="drop-zone">
+            <div class="drop-instructions">
+                <p>... or drop them here</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/fus.js"></script>
+    <script>
+        fhs.bootstrap(function(){
+            var imagesDiv = document.getElementById('images');
+
+            this.imagesContainer = imagesDiv;
+            this.dropZone = imagesDiv;
+            this.fileInput = document.getElementById('uploaded-files');
+        });
+    </script>
+</body>
+</html>
