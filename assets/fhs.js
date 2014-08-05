@@ -1,14 +1,20 @@
-(function(global){
+(function (global) {
+    'use strict';
+
     function processFileList(files) {
         var that = this,
+            i,
+            file,
             reader;
 
-        for(var i = 0, file; i < files.length, file = files[i]; i++){
+        for (i = 0; i < files.length; i++){
+            file = files[i];
+
             // Supported image formats: jpg, png
             if (file.type.match('image.(png|jpg|jpeg)')) {
                 reader = new FileReader();
 
-                reader.onload = function(event){ onImageLoad.apply(that, [event]) };
+                reader.onload = function(event){ onImageLoad.apply(that, [event]); };
                 reader.readAsDataURL(file);
             } else {
                 alert(['file type (', file.type, ') not supported!']);
@@ -22,7 +28,7 @@
         span.innerHTML += ['<img class="thumbnail" src="', event.target.result, '"/>'].join('');
         // insert loaded image at the beginning of list
         this.imagesContainer.insertBefore(span, this.imagesContainer.childNodes[0]);
-    };
+    }
 
 
     global.fhs = {
