@@ -17,7 +17,7 @@
                 reader.onload = function(event){ onImageLoad.apply(that, [event]); };
                 reader.readAsDataURL(file);
             } else {
-                alert(['file type (', file.type, ') not supported!']);
+                alert(['file type (', file.type, ') not supported!'].join(''));
             }
         }
     }
