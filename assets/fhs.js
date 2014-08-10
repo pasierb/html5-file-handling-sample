@@ -35,7 +35,7 @@
     }
 
     function showImage(imageUrl) {
-        window.open(imageUrl, null, 'toolbar=0, location=0, status=0, scrollbars=0, resizable=0');
+        window.open(imageUrl, null, 'toolbar=0, status=0');
     }
 
 
