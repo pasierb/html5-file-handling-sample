@@ -15,7 +15,7 @@
             file = files[i];
 
             // Supported image formats: jpg, png
-            if (file.type.match('image.(png|jpg|jpeg)')) {
+            if (file.type.match(this.supportedFileTypePattern)) {
                 reader = new FileReader();
 
                 reader.onload = onLoad;
@@ -34,11 +34,16 @@
         this.imagesContainer.insertBefore(span, this.imagesContainer.childNodes[0]);
     }
 
+    function showImage(imageUrl) {
+        window.open(imageUrl, null, 'toolbar=0, location=0, status=0, scrollbars=0, resizable=0');
+    }
+
 
     global.fhs = {
         imagesContainer: null,
         fileInput: null,
         dropZone: null,
+        supportedFileTypePattern: 'image.(png|jpg|jpeg)',
         bootstrap: function(callback) {
             var that = this;
 
@@ -71,7 +76,7 @@
                 var target = event.target;
 
                 if(target.nodeName == 'IMG'){
-                    window.open(target.src, null, 'toolbar=0, location=0, status=0, scrollbars=0, resizable=0');
+                    showImage(target.src);
                 }
 
                 event.preventDefault();
