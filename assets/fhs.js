@@ -7,6 +7,10 @@
             file,
             reader;
 
+        function onLoad(event) {
+            onImageLoad.apply(that, [event]);
+        }
+
         for (i = 0; i < files.length; i++){
             file = files[i];
 
@@ -14,7 +18,7 @@
             if (file.type.match('image.(png|jpg|jpeg)')) {
                 reader = new FileReader();
 
-                reader.onload = function(event){ onImageLoad.apply(that, [event]); };
+                reader.onload = onLoad;
                 reader.readAsDataURL(file);
             } else {
                 alert(['file type (', file.type, ') not supported!'].join(''));
