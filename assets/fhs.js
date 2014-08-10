@@ -29,7 +29,7 @@
     function onImageLoad(event) {
         var span = document.createElement('span');
 
-        span.innerHTML += ['<img class="thumbnail" src="', event.target.result, '"/>'].join('');
+        span.innerHTML += ['<img class="thumbnail" title="Open image in new window" src="', event.target.result, '"/>'].join('');
         // insert loaded image at the beginning of list
         this.imagesContainer.insertBefore(span, this.imagesContainer.childNodes[0]);
     }
